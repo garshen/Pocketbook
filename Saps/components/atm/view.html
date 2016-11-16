@@ -1,0 +1,43 @@
+<div data-role="view" data-title="ATM" data-layout="main" data-model="app.atm" data-show="app.atm.onShow" data-after-show="app.atm.afterShow" id="atmScreen" class="screen">
+
+    <!-- START_CUSTOM_CODE_atm -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+    <!-- END_CUSTOM_CODE_atm -->
+    <header data-role="header">
+        <div data-role="navbar" class="header-text">
+            <a data-role="backbutton" data-align="left" class="backButtonWrapper" style="display: none;">Back</a>
+            <span data-role="view-title"></span>
+
+            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
+
+
+            <a data-role="button" data-align="right" data-bind="events: { click: atmModel.addClick }">Add</a>
+
+        </div>
+    </header>
+
+
+    <!--  Certain features like grouping and inset styling are not supported when endless scroll is enabled. -->
+    <form class="km-filter-form custom-filter">
+        <div class="km-filter-wrap">
+            <input type="search" placeholder="Search..." data-bind="events:{keyup: atmModel.searchChange}">
+        </div>
+    </form>
+    <ul class="masterDetailView" data-role="listview" data-auto-bind="false" data-style="" data-template="atmModelTemplate" data-bind="source: atmModel.dataSource, events: {click: atmModel.itemClick}" data-pull-to-refresh="true" data-endless-scroll="true">
+    </ul>
+
+
+    <!-- START_CUSTOM_CODE_atmModel -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+    <!-- END_CUSTOM_CODE_atmModel -->
+    <script type="text/x-kendo-template" id="atmModelTemplate">
+        <div class="image-with-text">
+            # data = app.atm.atmModel.fixHierarchicalData(data); #
+
+            <h3>#: data['Atm'] #</h3>
+
+        </div>
+    </script>
+</div>

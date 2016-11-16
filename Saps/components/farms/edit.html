@@ -1,0 +1,75 @@
+<div data-role="view" data-title="Edit" data-model="app.farms.editItemViewModel" data-bind="events: { show: onShow }" id="farmsModelEditScreen" class="screen screen--edit edit-item-view">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text">
+            <span data-bind="text: itemData['Name']"></span>
+            <a data-role="backbutton" data-align="left" data-bind="events: { click: onCancel }">Cancel</a>
+            <a data-role="button" data-align="right" data-bind="events: { click: onSaveClick }">Save</a>
+        </div>
+    </header>
+    <!-- START_CUSTOM_CODE_farmsModel -->
+    <!-- END_CUSTOM_CODE_farmsModel -->
+    <div id="editableListForm62" class="form-view screen__content screen__content--form">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li class="form-content-item">
+
+
+                    <label id="dateField" class="field field--date">
+                        <span class="field__label">Date</span>
+
+
+                        <input id="date" data-bind="value: editFormData.date" type="date">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="nameField" class="field field--text">
+                        <span class="field__label">Name:</span>
+
+
+                        <input id="name" data-bind="value: editFormData.name" placeholder="Name of farm" type="text">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="responsiblePersonField" class="field field--text">
+                        <span class="field__label">Responsible Person:</span>
+
+
+                        <input id="responsiblePerson" data-bind="value: editFormData.responsiblePerson" placeholder="Person in control" type="text">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="addressField" class="field field--text">
+                        <span class="field__label">Address:</span>
+
+
+                        <input id="address" data-bind="value: editFormData.address" placeholder="Address of farm" type="text">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="outcomeField" class="field field--text">
+                        <span class="field__label">Outcome</span>
+
+
+                        <input id="outcome" data-bind="value: editFormData.outcome" placeholder="Outcome of visit" type="text">
+
+                    </label>
+                </li>
+            </ul>
+        </form>
+        <!-- START_CUSTOM_CODE_editableListForm62 -->
+        <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+        <!-- END_CUSTOM_CODE_editableListForm62 -->
+    </div>
+</div>

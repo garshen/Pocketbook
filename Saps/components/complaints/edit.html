@@ -1,0 +1,97 @@
+<div data-role="view" data-title="Edit" data-model="app.complaints.editItemViewModel" data-bind="events: { show: onShow }" id="complaintsModelEditScreen" class="screen screen--edit edit-item-view">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text">
+            <span data-bind="text: itemData['Complaint']"></span>
+            <a data-role="backbutton" data-align="left" data-bind="events: { click: onCancel }">Cancel</a>
+            <a data-role="button" data-align="right" data-bind="events: { click: onSaveClick }">Save</a>
+        </div>
+    </header>
+    <!-- START_CUSTOM_CODE_complaintsModel -->
+    <!-- END_CUSTOM_CODE_complaintsModel -->
+    <div id="editableListForm10" class="form-view screen__content screen__content--form">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li class="form-content-item">
+
+
+                    <label id="dateField" class="field field--date">
+                        <span class="field__label">Date</span>
+
+
+                        <input id="date" data-bind="value: editFormData.date" type="date">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="timeattendField" class="field field--text">
+                        <span class="field__label">timeattend</span>
+
+
+                        <input id="timeattend" data-bind="value: editFormData.timeattend" placeholder="time attend" type="text">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="complaintField" class="field field--text">
+                        <span class="field__label">complaint</span>
+
+
+                        <input id="complaint" data-bind="value: editFormData.complaint" placeholder="type of complaint" type="text">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="complainantField" class="field field--text">
+                        <span class="field__label">complainant</span>
+
+
+                        <input id="complainant" data-bind="value: editFormData.complainant" placeholder="Type here ..." type="text">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="addressField" class="field field--text">
+                        <span class="field__label">address</span>
+
+
+                        <input id="address" data-bind="value: editFormData.address" placeholder="address" type="text">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="cellField" class="field field--number">
+                        <span class="field__label">cell</span>
+
+
+                        <input id="cell" data-bind="value: editFormData.cell" placeholder="cell" type="number">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="outcomeField" class="field field--text">
+                        <span class="field__label">outcome</span>
+
+
+                        <input id="outcome" data-bind="value: editFormData.outcome" placeholder="outcome" type="text">
+
+                    </label>
+                </li>
+            </ul>
+        </form>
+        <!-- START_CUSTOM_CODE_editableListForm10 -->
+        <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+        <!-- END_CUSTOM_CODE_editableListForm10 -->
+    </div>
+</div>

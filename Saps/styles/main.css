@@ -226,59 +226,34 @@ Fields
 /*Header flex box */
 
 #kendoUiMobileApp .km-header .km-navbar {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-flex-flow: row;
-    -ms-flex-flow: row;
-    flex-flow: row;
-    -webkit-box-orient: horizontal;
 }
 
 #kendoUiMobileApp .km-header .km-rightitem,
 #kendoUiMobileApp .km-header .km-leftitem {
     position: static;
-    -webkit-box-flex: none;
-    -webkit-flex: none;
-    -ms-flex: none;
     flex: none;
 }
 
 #kendoUiMobileApp .km-header .km-leftitem {
-    -webkit-box-ordinal-group: 1;
-    -ms-flex-order: 1;
-    -webkit-order: 1;
     order: 1;
 }
 
 #kendoUiMobileApp .km-header .km-leftitem + .km-view-title {
-    -webkit-box-ordinal-group: 2;
-    -ms-flex-order: 2;
-    -webkit-order: 2;
     order: 2;
 }
 
 #kendoUiMobileApp .km-header .km-rightitem {
-    -webkit-box-ordinal-group: 3;
-    -ms-flex-order: 3;
-    -webkit-order: 3;
     order: 3;
 }
 
 #kendoUiMobileApp .km-header .km-view-title {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
     flex: 1;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     text-align: center;
     display: block;
-    -webkit-box-ordinal-group: 1;
-    -ms-flex-order: 1;
-    -webkit-order: 1;
     order: 1;
 }
 
@@ -426,33 +401,21 @@ Fields
 }
 
 #kendoUiMobileApp .multiple-select-modal-window .km-content .km-scroll-container {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-flex-flow: column nowrap;
-    -ms-flex-flow: column nowrap;
     flex-flow: column nowrap;
     height: 100%;
-    -webkit-box-orient: vertical;
 }
 
 #kendoUiMobileApp .multiple-select-modal-window .multiple-select-item-content {
     margin-bottom: 2rem;
     overflow: hidden;
     overflow-y: auto;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
     flex: 1;
     padding-top: 0.5rem;
 }
 
 #kendoUiMobileApp .multiple-select-modal-window .multiple-select-item-buttons {
     text-align: right;
-    -webkit-box-flex: none;
-    -webkit-flex: none;
-    -ms-flex: none;
     flex: none;
 }
 
@@ -467,6 +430,11 @@ Fields
 #kendoUiMobileApp .multiple-select-modal-window.km-modalview {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
     border-radius: 3px;
+}
+
+#kendoUiMobileApp .km-modalview-root .k-animation-container {
+    height: 100% !important;
+    width: 100% !important;
 }
 
 #kendoUiMobileApp .km-modalview-wrapper {

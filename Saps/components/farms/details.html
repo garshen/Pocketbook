@@ -1,0 +1,67 @@
+<div data-role="view" data-title="Details" data-model="app.farms.farmsModel" data-bind="events: { show: detailsShow }" id="farmsModelScreen" class="screen screen--detail">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text">
+            <a data-role="backbutton" data-align="left">Back</a>
+            <span data-bind="text: currentItem['Name']"></span>
+            <a data-role="button" data-align="right" data-bind="events: { click: editClick }">Edit</a>
+            <a data-role="button" class="nav-button" data-align="right" data-bind="events: { click: deleteClick }"><i class="km-icon km-delete"></i></a>
+        </div>
+    </header>
+
+    <div class="details-content screen__content screen__content--details">
+        <div class="km-listview-wrapper">
+            <ul class="km-listview km-list km-listinset details-fields">
+
+
+                <li class="detail-content-item">
+
+
+                    <div id="dateField" class="field field--heading">
+
+                        <h3 data-bind="html: currentItem.Date"></h3>
+
+                    </div>
+
+
+                </li>
+                <li class="detail-content-item">
+
+
+                    <div id="responsiblePersonField" class="field field--heading">
+
+                        <h3 data-bind="html: currentItem.ResponsiblePerson"></h3>
+
+                    </div>
+
+
+                </li>
+                <li class="detail-content-item">
+
+
+                    <div id="addressField" class="field field--heading">
+
+                        <h3 data-bind="html: currentItem.Address"></h3>
+
+                    </div>
+
+
+                </li>
+                <li class="detail-content-item">
+
+
+                    <div id="outcomeField" class="field field--heading">
+
+                        <h3 data-bind="html: currentItem.Outcome"></h3>
+
+                    </div>
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- START_CUSTOM_CODE_farmsModel -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+    <!-- END_CUSTOM_CODE_farmsModel -->
+</div>

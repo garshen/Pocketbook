@@ -1,19 +1,20 @@
 'use strict';
 
-app.home = kendo.observable({
+app.register = kendo.observable({
     onShow: function() {},
     afterShow: function() {}
 });
 
-// START_CUSTOM_CODE_home
+// START_CUSTOM_CODE_register
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 
-// END_CUSTOM_CODE_home
+// END_CUSTOM_CODE_register
 (function(parent) {
     var provider = app.data.saps,
         mode = 'signin',
         registerRedirect = 'home',
-        signinRedirect = 'complaints',
+        signinRedirect = 'home',
+        rememberKey = 'saps_authData_registerModel',
         init = function(error, result) {
             $('.status').text('');
 
@@ -26,7 +27,7 @@ app.home = kendo.observable({
             }
 
             var activeView = mode === 'signin' ? '.signin-view' : '.signup-view',
-                model = parent.homeModel;
+                model = parent.registerModel;
 
             if (provider.setup && provider.setup.offlineStorage && !app.isOnline()) {
                 $('.signin-view', 'signup-view').hide();
@@ -47,10 +48,17 @@ app.home = kendo.observable({
                 model.set('logout', null);
             }
 
+            var rememberedData = localStorage ? JSON.parse(localStorage.getItem(rememberKey)) : app[rememberKey];
+            if (rememberedData && rememberedData.email && rememberedData.password) {
+
+                parent.registerModel.set('email', rememberedData.email);
+                parent.registerModel.set('password', rememberedData.password);
+                parent.registerModel.signin();
+            }
         },
         successHandler = function(data) {
             var redirect = mode === 'signin' ? signinRedirect : registerRedirect,
-                model = parent.homeModel || {},
+                model = parent.registerModel || {},
                 logout = model.logout;
 
             if (logout) {
@@ -61,6 +69,17 @@ app.home = kendo.observable({
                     provider.Users.logout(init, init);
                     return;
                 }
+                var rememberedData = {
+                    email: model.email,
+                    password: model.password
+                };
+                if (model.rememberme && rememberedData.email && rememberedData.password) {
+                    if (localStorage) {
+                        localStorage.setItem(rememberKey, JSON.stringify(rememberedData));
+                    } else {
+                        app[rememberKey] = rememberedData;
+                    }
+                }
                 app.user = data.result;
 
                 setTimeout(function() {
@@ -70,13 +89,13 @@ app.home = kendo.observable({
                 init();
             }
         },
-        homeModel = kendo.observable({
+        registerModel = kendo.observable({
             displayName: '',
             email: '',
             password: '',
             errorMessage: '',
             validateData: function(data) {
-                var model = homeModel;
+                var model = registerModel;
 
                 if (!data.email && !data.password) {
                     model.set('errorMessage', 'Missing credentials.');
@@ -96,7 +115,7 @@ app.home = kendo.observable({
                 return true;
             },
             signin: function() {
-                var model = homeModel,
+                var model = registerModel,
                     email = model.email.toLowerCase(),
                     password = model.password;
 
@@ -108,7 +127,7 @@ app.home = kendo.observable({
 
             },
             register: function() {
-                var model = homeModel,
+                var model = registerModel,
                     email = model.email.toLowerCase(),
                     password = model.password,
                     displayName = model.displayName,
@@ -125,7 +144,7 @@ app.home = kendo.observable({
 
             },
             toggleView: function() {
-                var model = homeModel;
+                var model = registerModel;
                 model.set('errorMessage', '');
 
                 mode = mode === 'signin' ? 'register' : 'signin';
@@ -134,16 +153,21 @@ app.home = kendo.observable({
             }
         });
 
-    parent.set('homeModel', homeModel);
+    parent.set('registerModel', registerModel);
     parent.set('afterShow', function(e) {
         if (e && e.view && e.view.params && e.view.params.logout) {
-            homeModel.set('logout', true);
+            if (localStorage) {
+                localStorage.setItem(rememberKey, null);
+            } else {
+                app[rememberKey] = null;
+            }
+            registerModel.set('logout', true);
         }
         provider.Users.currentUser().then(successHandler, init);
     });
-})(app.home);
+})(app.register);
 
-// START_CUSTOM_CODE_homeModel
+// START_CUSTOM_CODE_registerModel
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 
-// END_CUSTOM_CODE_homeModel
+// END_CUSTOM_CODE_registerModel
