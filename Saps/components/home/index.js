@@ -4,6 +4,7 @@ app.home = kendo.observable({
     onShow: function() {},
     afterShow: function() {}
 });
+app.localization.registerView('home');
 
 // START_CUSTOM_CODE_home
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
@@ -142,15 +143,10 @@ app.home = kendo.observable({
 
                 provider.Users.register(email, password, attrs, successHandler, init);
 
-                 navigator.notification.confirm(
-                    'Your account was created succesfully',
-                   
-                    '', ['OK', 'Cancel']
-                )
-        
+                navigator.notification.alert("Your account was successfully created.");
 
-          },
-           
+            },
+        
             toggleView: function() {
                 var model = homeModel;
                 model.set('errorMessage', '');
@@ -159,6 +155,7 @@ app.home = kendo.observable({
 
                 init();
             }
+           
         });
 
     parent.set('homeModel', homeModel);
