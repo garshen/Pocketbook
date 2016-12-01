@@ -4,7 +4,7 @@
   "projectVersion": 1,
   "AppIdentifier": "com.telerik.Saps",
   "DisplayName": "Saps",
-  "Author": "",
+  "Author": "Garshen Williams",
   "Description": "Saps",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
@@ -16,6 +16,17 @@
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
   "FrameworkVersion": "4.0.0",
   "AndroidPermissions": [
+    "android.permission.ACCESS_CHECKIN_PROPERTIES",
+    "android.permission.ACCESS_COARSE_LOCATION",
+    "android.permission.ACCESS_FINE_LOCATION",
+    "android.permission.ACCESS_WIFI_STATE",
+    "android.permission.ACCOUNT_MANAGER",
+    "android.permission.BATTERY_STATS",
+    "android.permission.CAMERA",
+    "android.permission.CAPTURE_AUDIO_OUTPUT",
+    "android.permission.CAPTURE_SECURE_VIDEO_OUTPUT",
+    "android.permission.CAPTURE_VIDEO_OUTPUT",
+    "android.permission.FLASHLIGHT",
     "android.permission.INTERNET"
   ],
   "DeviceOrientations": [

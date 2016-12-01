@@ -88,6 +88,7 @@ app.complaints = kendo.observable({
                 var data = this.data();
                 for (var i = 0; i < data.length; i++) {
                     var dataItem = data[i];
+                    
 
                     /// start flattenLocation property
                     flattenLocationProperties(dataItem);
@@ -120,7 +121,7 @@ app.complaints = kendo.observable({
             serverFiltering: true,
             serverSorting: true,
             sort: {
-                field: 'Complaint',
+                field: 'Complainant',
                 dir: 'asc'
             },
             serverPaging: true,

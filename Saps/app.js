@@ -4,7 +4,6 @@
     var app = {
         data: {}
     };
-
     var bootstrap = function() {
         $(function() {
             app.mobileApp = new kendo.mobile.Application(document.body, {

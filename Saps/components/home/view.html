@@ -1,4 +1,4 @@
-<div data-role="view" data-title="Login" data-layout="main" data-model="app.home" data-show="app.home.onShow" data-after-show="app.home.afterShow" id="homeScreen" class="screen">
+<div data-role="view" data-title="Login/Register" data-layout="main" data-model="app.home" data-show="app.home.onShow" data-after-show="app.home.afterShow" id="homeScreen" class="screen">
     <div class="signin-view screen__content screen__content--signin">
         <form>
             <ul data-role="listview" data-style="inset">
@@ -10,6 +10,11 @@
                 <li>
                     <label>Password
                         <input type="password" placeholder="password" data-bind="value: homeModel.password" required>
+                    </label>
+                </li>
+                <li>
+                    <label>Remember Me
+                        <input type="checkbox" data-bind="checked: homeModel.rememberme">
                     </label>
                 </li>
             </ul>
@@ -33,14 +38,20 @@
                     </label>
                 </li>
                 <li>
+                    <label>Persal
+                        <input type="text" data-bind="value: homeModel.displayName">
+                    </label>
+                </li>
+                <li>
                     <label>Password
                         <input type="password" data-bind="value: homeModel.password">
                     </label>
                 </li>
+                
             </ul>
             <div class="button-group button-group-vertical">
                 <a class="primary" data-role="button" data-bind="events: { click: homeModel.register }">Register</a>
-                <a data-role="button" data-bind="events: { click: homeModel.toggleView }">Sign In</a>
+                <a data-role="button" data-bind="events: { click: homeModel.toggleView }">Login</a>
             </div>
 
             <span class="status" data-bind="text: homeModel.errorMessage"></span>

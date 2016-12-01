@@ -14,6 +14,7 @@ app.home = kendo.observable({
         mode = 'signin',
         registerRedirect = 'home',
         signinRedirect = 'complaints',
+        rememberKey = 'saps_authData_homeModel',
         init = function(error, result) {
             $('.status').text('');
 
@@ -47,6 +48,13 @@ app.home = kendo.observable({
                 model.set('logout', null);
             }
 
+            var rememberedData = localStorage ? JSON.parse(localStorage.getItem(rememberKey)) : app[rememberKey];
+            if (rememberedData && rememberedData.email && rememberedData.password) {
+
+                parent.homeModel.set('email', rememberedData.email);
+                parent.homeModel.set('password', rememberedData.password);
+                parent.homeModel.signin();
+            }
         },
         successHandler = function(data) {
             var redirect = mode === 'signin' ? signinRedirect : registerRedirect,
@@ -60,6 +68,17 @@ app.home = kendo.observable({
                 if (logout) {
                     provider.Users.logout(init, init);
                     return;
+                }
+                var rememberedData = {
+                    email: model.email,
+                    password: model.password
+                };
+                if (model.rememberme && rememberedData.email && rememberedData.password) {
+                    if (localStorage) {
+                        localStorage.setItem(rememberKey, JSON.stringify(rememberedData));
+                    } else {
+                        app[rememberKey] = rememberedData;
+                    }
                 }
                 app.user = data.result;
 
@@ -123,7 +142,15 @@ app.home = kendo.observable({
 
                 provider.Users.register(email, password, attrs, successHandler, init);
 
-            },
+                 navigator.notification.confirm(
+                    'Your account was created succesfully',
+                   
+                    '', ['OK', 'Cancel']
+                )
+        
+
+          },
+           
             toggleView: function() {
                 var model = homeModel;
                 model.set('errorMessage', '');
@@ -137,6 +164,11 @@ app.home = kendo.observable({
     parent.set('homeModel', homeModel);
     parent.set('afterShow', function(e) {
         if (e && e.view && e.view.params && e.view.params.logout) {
+            if (localStorage) {
+                localStorage.setItem(rememberKey, null);
+            } else {
+                app[rememberKey] = null;
+            }
             homeModel.set('logout', true);
         }
         provider.Users.currentUser().then(successHandler, init);

@@ -13,12 +13,14 @@
           "gotoRegisterLabel": "Register",
           "registerEmailLabel": "Email",
           "registerPasswordLabel": "Password",
+          "registerNameLabel": "Persal",
           "registerLabel": "Register",
           "registerRedirect": "home",
-          "gotoSigninLabel": "Sign In",
+          "gotoSigninLabel": "Login",
           "enableLogout": true,
           "logoutLabel": "Sign Out",
-          "enableRememberme": false,
+          "enableRememberme": true,
+          "remembermeLabel": "Remember Me",
           "emailLabel": "Email",
           "emailPlaceholder": "email",
           "passwordLabel": "Password",
@@ -27,39 +29,9 @@
           "signinRedirect": "complaints"
         }
       ],
-      "title": "Login",
+      "title": "Login/Register",
       "addToNavigation": true,
       "icon": "contacts"
-    },
-    {
-      "type": "kendo-ui-mobile:view",
-      "name": "register",
-      "components": [
-        {
-          "type": "kendo-ui-mobile:authentication",
-          "name": "registerModel",
-          "dataProvider": "saps",
-          "enableRegistration": true,
-          "gotoRegisterLabel": "Register",
-          "registerEmailLabel": "Email",
-          "registerPasswordLabel": "Password",
-          "registerLabel": "Register",
-          "registerRedirect": "home",
-          "gotoSigninLabel": "Sign In",
-          "enableLogout": false,
-          "enableRememberme": true,
-          "remembermeLabel": "Remember Me",
-          "emailLabel": "Email",
-          "emailPlaceholder": "email",
-          "passwordLabel": "Password",
-          "passwordPlaceholder": "password",
-          "signinLabel": "login",
-          "signinRedirect": "home"
-        }
-      ],
-      "title": "Register",
-      "addToNavigation": true,
-      "icon": "edit"
     },
     {
       "type": "kendo-ui-mobile:view",
@@ -326,12 +298,12 @@
           "isMapView": false,
           "geoPointFieldAdditional": "Complainant",
           "serverSideSorting": true,
-          "serverSideSortingField": "Complaint",
+          "serverSideSortingField": "Complainant",
           "serverSideSortingDirection": "asc",
           "serverSidePaging": false,
           "detailHeaderFieldSource": "dataBound",
           "detailHeaderField": "Complaint",
-          "detailSubHeaderField": "Complaint"
+          "detailSubHeaderField": "Complainant"
         }
       ],
       "title": "Complaints",
