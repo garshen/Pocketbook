@@ -1,28 +1,28 @@
-<div data-role="view" data-title="Login/Register" data-layout="main" data-model="app.home" data-show="app.home.onShow" data-after-show="app.home.afterShow" id="homeScreen" class="screen">
+<div data-role="view" data-title="View" data-layout="main" data-model="app.home" data-show="app.home.onShow" data-after-show="app.home.afterShow" id="homeScreen" class="screen">
     <div class="signin-view screen__content screen__content--signin">
         <form>
             <ul data-role="listview" data-style="inset">
                 <li>
-                    <label>Email
-                        <input type="email" placeholder="email" data-bind="value: homeModel.email" required autofocus>
+                    <label><span data-bind="text: strings.home.homeModel.emailLabel"></span>
+                        <input type="email" data-bind="value: homeModel.email, attr: { placeholder: strings.home.homeModel.emailPlaceholder }" required autofocus>
                     </label>
                 </li>
                 <li>
-                    <label>Password
-                        <input type="password" placeholder="password" data-bind="value: homeModel.password" required>
+                    <label><span data-bind="text: strings.home.homeModel.passwordLabel"></span>
+                        <input type="password" data-bind="value: homeModel.password, attr: { placeholder: strings.home.homeModel.emailPlaceholder }" required>
                     </label>
                 </li>
                 <li>
-                    <label>Remember Me
+                    <label><span data-bind="text: strings.home.homeModel.remembermeLabel"></span>
                         <input type="checkbox" data-bind="checked: homeModel.rememberme">
                     </label>
                 </li>
             </ul>
 
             <div class="button-group button-group-vertical">
-                <a data-role="button" class="primary" data-bind="events: { click: homeModel.signin }">Login</a>
+                <a data-role="button" class="primary" data-bind="events: { click: homeModel.signin }, buttonText: strings.home.homeModel.signinLabel"></a>
 
-                <a data-role="button" data-bind="events: { click: homeModel.toggleView }">Register</a>
+                <a data-role="button" data-bind="events: { click: homeModel.toggleView }, buttonText: strings.home.homeModel.gotoRegisterLabel"></a>
 
             </div>
 
@@ -33,25 +33,24 @@
         <form>
             <ul data-role="listview" data-style="inset">
                 <li>
-                    <label>Email
+                    <label><span data-bind="text: strings.home.homeModel.registerEmailLabel"></span>
                         <input type="email" data-bind="value: homeModel.email" required>
                     </label>
                 </li>
                 <li>
-                    <label>Persal
-                        <input type="text" data-bind="value: homeModel.displayName">
-                    </label>
-                </li>
-                <li>
-                    <label>Password
+                    <label><span data-bind="text: strings.home.homeModel.registerPasswordLabel"></span>
                         <input type="password" data-bind="value: homeModel.password">
                     </label>
                 </li>
-                
+                <li>
+                    <label><span data-bind="text: strings.home.homeModel.registerNameLabel"></span>
+                        <input type="text" data-bind="value: homeModel.displayName">
+                    </label>
+                </li>
             </ul>
             <div class="button-group button-group-vertical">
-                <a class="primary" data-role="button" data-bind="events: { click: homeModel.register }">Register</a>
-                <a data-role="button" data-bind="events: { click: homeModel.toggleView }">Login</a>
+                <a class="primary" data-role="button" data-bind="events: { click: homeModel.register }, buttonText: strings.home.homeModel.registerLabel"></a>
+                <a data-role="button" data-bind="events: { click: homeModel.toggleView }, buttonText: strings.home.homeModel.gotoSigninLabel"></a>
             </div>
 
             <span class="status" data-bind="text: homeModel.errorMessage"></span>
@@ -64,6 +63,16 @@
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
 
     <!-- END_CUSTOM_CODE_homeModel -->
+    <header data-role="header">
+        <div data-role="navbar" class="header-text">
+
+            <span data-bind="text: strings.home.title"></span>
+
+            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
+
+        </div>
+    </header>
+
 
     <!-- START_CUSTOM_CODE_home -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->

@@ -563,3 +563,7 @@
   color: #32364c;
   word-wrap: break-word;
 }
+/*Image Gallery field*/
+.km-nova .field--gallery:not(.field--gallery-slider) .field__content .gallery__items:after {
+  background: #dfe1e2;
+}

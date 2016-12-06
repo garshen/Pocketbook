@@ -143,10 +143,7 @@ app.localization.registerView('home');
 
                 provider.Users.register(email, password, attrs, successHandler, init);
 
-                navigator.notification.alert("Your account was successfully created.");
-
             },
-        
             toggleView: function() {
                 var model = homeModel;
                 model.set('errorMessage', '');
@@ -155,7 +152,6 @@ app.localization.registerView('home');
 
                 init();
             }
-           
         });
 
     parent.set('homeModel', homeModel);

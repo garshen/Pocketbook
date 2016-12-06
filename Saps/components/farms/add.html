@@ -1,7 +1,7 @@
 <div data-role="view" data-title="Add" data-model="app.farms.addItemViewModel" data-bind="events: { show: onShow }" id="farmsModelAddScreen" class="screen screen--add add-item-view">
     <header data-role="header">
         <div data-role="navbar" class="header-text">
-            <span>Add Farm</span>
+            <span data-bind="text: strings.farms.farmsModel.addScreenHeaderValue"></span>
             <a data-role="backbutton" data-align="left" data-bind="events: { click: onCancel }">Cancel</a>
             <a data-role="button" data-align="right" data-bind="events: { click: onSaveClick }">Save</a>
         </div>
@@ -14,8 +14,8 @@
                 <li class="form-content-item">
 
 
-                    <label id="dateField" class="field field--date">
-                        <span class="field__label">Date</span>
+                    <label id="dateField" class="field km-listview-label field--date">
+                        <span class="field__label" data-bind="text: strings.complaints.complaintsModel.editableListForm10.date.title"></span>
 
 
                         <input id="date" data-bind="value: addFormData.date" type="date">
@@ -25,44 +25,44 @@
                 <li class="form-content-item">
 
 
-                    <label id="nameField" class="field field--text">
-                        <span class="field__label">Name:</span>
+                    <label id="nameField" class="field km-listview-label field--text">
+                        <span class="field__label" data-bind="text: strings.farms.farmsModel.editableListForm59.name.title"></span>
 
 
-                        <input id="name" data-bind="value: addFormData.name" placeholder="Name of Farm" type="text">
-
-                    </label>
-                </li>
-                <li class="form-content-item">
-
-
-                    <label id="personResponsibleField" class="field field--text">
-                        <span class="field__label">PersonResponsible</span>
-
-
-                        <input id="personResponsible" data-bind="value: addFormData.personResponsible" placeholder="Person Responsible:" type="text">
+                        <input id="name" data-bind="value: addFormData.name" type="text">
 
                     </label>
                 </li>
                 <li class="form-content-item">
 
 
-                    <label id="addressField" class="field field--text">
-                        <span class="field__label">Address</span>
+                    <label id="personResponsibleField" class="field km-listview-label field--text">
+                        <span class="field__label" data-bind="text: strings.farms.farmsModel.editableListForm59.personResponsible.title"></span>
 
 
-                        <input id="address" data-bind="value: addFormData.address" placeholder="Address:" type="text">
+                        <input id="personResponsible" data-bind="value: addFormData.personResponsible" type="text">
 
                     </label>
                 </li>
                 <li class="form-content-item">
 
 
-                    <label id="outcomeField" class="field field--text">
-                        <span class="field__label">Outcome</span>
+                    <label id="addressField" class="field km-listview-label field--text">
+                        <span class="field__label" data-bind="text: strings.complaints.complaintsModel.editableListForm10.address.title"></span>
 
 
-                        <input id="outcome" data-bind="value: addFormData.outcome" placeholder="Outcome of visit" type="text">
+                        <input id="address" data-bind="value: addFormData.address" type="text">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="outcomeField" class="field km-listview-label field--text">
+                        <span class="field__label" data-bind="text: strings.complaints.complaintsModel.editableListForm10.outcome.title"></span>
+
+
+                        <input id="outcome" data-bind="value: addFormData.outcome" type="text">
 
                     </label>
                 </li>

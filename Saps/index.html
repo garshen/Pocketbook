@@ -19,8 +19,8 @@
 </head>
 
 <body id="kendoUiMobileApp">
-    <script src="components/farms/index.js"></script>
     <script src="components/atm/index.js"></script>
+    <script src="components/farms/index.js"></script>
     <script src="components/complaints/index.js"></script>
     <script src="components/home/index.js"></script>
     <div data-role="layout" data-id="main">
@@ -47,17 +47,18 @@
             </div>
         </header>
         <ul id="navigation-container" data-role="listview">
-            <li><a href="components/home/view.html" data-icon="contacts">Login/Register</a></li>
+            <li><a href="components/home/view.html" data-icon="contacts"><span class="navigation-link-text" data-bind="text: strings.home.title"></span></a></li>
 
-            <li><a href="components/complaints/view.html" data-icon="bookmarks">Complaints</a></li>
+            <li><a href="components/complaints/view.html" data-icon="bookmarks"><span class="navigation-link-text" data-bind="text: strings.complaints.title"></span></a></li>
 
-            <li><a href="components/atm/view.html" data-icon="stop">ATM</a></li>
+            <li><a href="components/farms/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.farms.title"></span></a></li>
 
-            <li><a href="components/farms/view.html" data-icon="home">Farm Visit</a></li>
-
-
-            <li id="homeModellogout"><a href="components/home/view.html?logout=true" data-position="end" data-icon="action">Sign Out</a></li>
+            <li><a href="components/atm/view.html" data-icon="organize"><span class="navigation-link-text" data-bind="text: strings.atm.title"></span></a></li>
+            <li id="homeModellogout"><a href="components/home/view.html?logout=true" data-position="end" data-icon="action"><span class="navigation-link-text" data-bind="text: strings.home.homeModel.logoutLabel"></span></a></li>
         </ul>
+    </div>
+    <div id="notify" class="notify-pop-up">
+        <span class="notify-pop-up__content"></span>
     </div>
     <!--  start index html save -->
     <!--  end index html save -->

@@ -2,7 +2,7 @@
     <header data-role="header">
         <div data-role="navbar" class="header-text">
             <a data-role="backbutton" data-align="left">Back</a>
-            <span>ATM Visited</span>
+            <span data-bind="text: strings.atm.atmModel.detailHeaderFieldValue"></span>
             <a data-role="button" data-align="right" data-bind="events: { click: editClick }">Edit</a>
             <a data-role="button" class="nav-button" data-align="right" data-bind="events: { click: deleteClick }"><i class="km-icon km-delete"></i></a>
         </div>
@@ -11,10 +11,19 @@
     <div class="details-content screen__content screen__content--details">
         <div class="km-listview-wrapper">
             <ul class="km-listview km-list km-listinset details-fields">
-                <li>
-                    <h3 data-bind="text: currentItem.Atm"></h3></li>
 
 
+                <li class="detail-content-item">
+
+
+                    <div id="atmField" class="field field--heading">
+
+                        <h3 data-bind="html: currentItem.Atm"></h3>
+
+                    </div>
+
+
+                </li>
                 <li class="detail-content-item">
 
 

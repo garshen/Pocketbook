@@ -1,0 +1,113 @@
+{
+  "_app": {
+    "navigationMore": "More",
+    "showMoreTitle": "Show More",
+    "qrCodeScan": "Scan"
+  },
+  "home": {
+    "title": "Login/Register",
+    "homeModel": {
+      "logoutLabel": "Sign Out",
+      "emailLabel": "Email",
+      "emailPlaceholder": "email",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "password",
+      "signinLabel": "Login",
+      "gotoRegisterLabel": "Register",
+      "remembermeLabel": "Remember Me",
+      "registerEmailLabel": "Email",
+      "registerPasswordLabel": "Password",
+      "registerNameLabel": "Persal",
+      "registerLabel": "Register",
+      "gotoSigninLabel": "Login"
+    }
+  },
+  "complaints": {
+    "title": "Complaints",
+    "complaintsModel": {
+      "addScreenHeaderValue": "Add Complaint",
+      "editableListForm10": {
+        "date": {
+          "title": "Date"
+        },
+        "timeattend": {
+          "title": "Timeattend:",
+          "placeholder": "time attended"
+        },
+        "complaint": {
+          "title": "Complaint:",
+          "placeholder": "Type of Complaint"
+        },
+        "complainant": {
+          "title": "complainant:",
+          "placeholder": "name of complainant"
+        },
+        "address": {
+          "title": "Address:",
+          "placeholder": "Address of farm"
+        },
+        "cell": {
+          "title": "Cell:",
+          "placeholder": "cellphone number"
+        },
+        "outcome": {
+          "title": "Outcome",
+          "placeholder": "Outcome of visit"
+        }
+      },
+      "editableListForm21": {},
+      "editableListForm23": {
+        "heading": {
+          "title": "Heading"
+        },
+        "heading1": {
+          "title": "Heading"
+        },
+        "heading2": {
+          "title": "Heading"
+        },
+        "heading3": {
+          "title": "Heading"
+        },
+        "heading4": {
+          "title": "Heading"
+        }
+      }
+    }
+  },
+  "farms": {
+    "title": "Farm Visit",
+    "farmsModel": {
+      "addScreenHeaderValue": "Add Farm",
+      "editableListForm55": {
+        "responsiblePerson": {
+          "title": "Responsible Person:",
+          "placeholder": "Person in control"
+        }
+      },
+      "editableListForm59": {
+        "name": {
+          "title": "Name:",
+          "placeholder": "Name of farm"
+        },
+        "personResponsible": {
+          "title": "PersonResponsible",
+          "placeholder": "Person Responsible:"
+        }
+      },
+      "editableListForm62": {}
+    }
+  },
+  "atm": {
+    "title": "Atm",
+    "atmModel": {
+      "detailHeaderFieldValue": "Details",
+      "addScreenHeaderValue": "Add Atm",
+      "editScreenHeaderValue": "Edit",
+      "editableListForm84": {},
+      "editableListForm85": {},
+      "editableListForm90": {}
+    },
+    "placeholder": "Name of Atm"
+  }
+}

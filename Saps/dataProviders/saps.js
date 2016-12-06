@@ -13,7 +13,7 @@
     function _readyTimeout() {
         if (!provider.sbReady) {
             provider.sbReady = true;
-            provider._emitter.emit('sbReady');
+            provider.emit('sbReady');
         }
     }
 

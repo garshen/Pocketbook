@@ -1,23 +1,19 @@
-<div data-role="view" data-title="Farm Visit" data-layout="main" data-model="app.farms" data-show="app.farms.onShow" data-after-show="app.farms.afterShow" id="farmsScreen" class="screen">
+<div data-role="view" data-title="View" data-layout="main" data-model="app.farms" data-show="app.farms.onShow" data-after-show="app.farms.afterShow" id="farmsScreen" class="screen">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text">
+
+            <span data-bind="text: strings.farms.title"></span>
+
+            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
+
+            <a data-role="button" data-align="right" data-bind="events: { click: farmsModel.addClick }">Add</a></div>
+    </header>
+
 
     <!-- START_CUSTOM_CODE_farms -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
 
     <!-- END_CUSTOM_CODE_farms -->
-    <header data-role="header">
-        <div data-role="navbar" class="header-text">
-            <a data-role="backbutton" data-align="left" class="backButtonWrapper" style="display: none;">Back</a>
-            <span data-role="view-title"></span>
-
-            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
-
-
-            <a data-role="button" data-align="right" data-bind="events: { click: farmsModel.addClick }">Add</a>
-
-        </div>
-    </header>
-
-
     <!--  Certain features like grouping and inset styling are not supported when endless scroll is enabled. -->
     <form class="km-filter-form custom-filter">
         <div class="km-filter-wrap">

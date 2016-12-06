@@ -1,7 +1,7 @@
 <div data-role="view" data-title="Add" data-model="app.complaints.addItemViewModel" data-bind="events: { show: onShow }" id="complaintsModelAddScreen" class="screen screen--add add-item-view">
     <header data-role="header">
         <div data-role="navbar" class="header-text">
-            <span>Add Complaint</span>
+            <span data-bind="text: strings.complaints.complaintsModel.addScreenHeaderValue"></span>
             <a data-role="backbutton" data-align="left" data-bind="events: { click: onCancel }">Cancel</a>
             <a data-role="button" data-align="right" data-bind="events: { click: onSaveClick }">Save</a>
         </div>
@@ -14,8 +14,8 @@
                 <li class="form-content-item">
 
 
-                    <label id="dateField" class="field field--datetime-local">
-                        <span class="field__label">Date</span>
+                    <label id="dateField" class="field km-listview-label field--datetime-local">
+                        <span class="field__label" data-bind="text: strings.complaints.complaintsModel.editableListForm10.date.title"></span>
 
 
                         <input id="date" data-bind="value: addFormData.date" type="datetime-local">
@@ -25,66 +25,66 @@
                 <li class="form-content-item">
 
 
-                    <label id="timeattendField" class="field field--text">
-                        <span class="field__label">timeattend</span>
+                    <label id="timeattendField" class="field km-listview-label field--text">
+                        <span class="field__label" data-bind="text: strings.complaints.complaintsModel.editableListForm10.timeattend.title"></span>
 
 
-                        <input id="timeattend" data-bind="value: addFormData.timeattend" placeholder="time attended" type="text">
-
-                    </label>
-                </li>
-                <li class="form-content-item">
-
-
-                    <label id="complaintField" class="field field--text">
-                        <span class="field__label">Complaint</span>
-
-
-                        <input id="complaint" data-bind="value: addFormData.complaint" placeholder="Type of Complaint" type="text">
+                        <input id="timeattend" data-bind="value: addFormData.timeattend" type="text">
 
                     </label>
                 </li>
                 <li class="form-content-item">
 
 
-                    <label id="complainantField" class="field field--text">
-                        <span class="field__label">complainant</span>
+                    <label id="complaintField" class="field km-listview-label field--text">
+                        <span class="field__label" data-bind="text: strings.complaints.complaintsModel.editableListForm10.complaint.title"></span>
 
 
-                        <input id="complainant" data-bind="value: addFormData.complainant" placeholder="name of complainant" type="text">
-
-                    </label>
-                </li>
-                <li class="form-content-item">
-
-
-                    <label id="addressField" class="field field--text">
-                        <span class="field__label">address</span>
-
-
-                        <input id="address" data-bind="value: addFormData.address" placeholder="address of complainant" type="text">
+                        <input id="complaint" data-bind="value: addFormData.complaint" type="text">
 
                     </label>
                 </li>
                 <li class="form-content-item">
 
 
-                    <label id="cellField" class="field field--number">
-                        <span class="field__label">cell</span>
+                    <label id="complainantField" class="field km-listview-label field--text">
+                        <span class="field__label" data-bind="text: strings.complaints.complaintsModel.editableListForm10.complainant.title"></span>
 
 
-                        <input id="cell" data-bind="value: addFormData.cell" placeholder="cellphone number" type="number">
+                        <input id="complainant" data-bind="value: addFormData.complainant" type="text">
 
                     </label>
                 </li>
                 <li class="form-content-item">
 
 
-                    <label id="outcomeField" class="field field--text">
-                        <span class="field__label">outcome</span>
+                    <label id="addressField" class="field km-listview-label field--text">
+                        <span class="field__label" data-bind="text: strings.complaints.complaintsModel.editableListForm10.address.title"></span>
 
 
-                        <input id="outcome" data-bind="value: addFormData.outcome" placeholder="outcome" type="text">
+                        <input id="address" data-bind="value: addFormData.address" type="text">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="cellField" class="field km-listview-label field--number">
+                        <span class="field__label" data-bind="text: strings.complaints.complaintsModel.editableListForm10.cell.title"></span>
+
+
+                        <input id="cell" data-bind="value: addFormData.cell" type="number">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="outcomeField" class="field km-listview-label field--text">
+                        <span class="field__label" data-bind="text: strings.complaints.complaintsModel.editableListForm10.outcome.title"></span>
+
+
+                        <input id="outcome" data-bind="value: addFormData.outcome" type="text">
 
                     </label>
                 </li>

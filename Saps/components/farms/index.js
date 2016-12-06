@@ -4,6 +4,7 @@ app.farms = kendo.observable({
     onShow: function() {},
     afterShow: function() {}
 });
+app.localization.registerView('farms');
 
 // START_CUSTOM_CODE_farms
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
@@ -41,25 +42,7 @@ app.farms = kendo.observable({
                 dataSource.filter({});
             }
         },
-        processImage = function(img) {
 
-            function isAbsolute(img) {
-                if  (img && (img.slice(0,  5)  ===  'http:' || img.slice(0,  6)  ===  'https:' || img.slice(0,  2)  ===  '//'  ||  img.slice(0,  5)  ===  'data:')) {
-                    return true;
-                }
-                return false;
-            }
-
-            if (!img) {
-                var empty1x1png = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=';
-                img = 'data:image/png;base64,' + empty1x1png;
-            } else if (!isAbsolute(img)) {
-                var setup = dataProvider.setup || {};
-                img = setup.scheme + ':' + setup.url + setup.appId + '/Files/' + img + '/Download';
-            }
-
-            return img;
-        },
         flattenLocationProperties = function(dataItem) {
             var propName, propValue,
                 isLocation = function(value) {
@@ -136,7 +119,7 @@ app.farms = kendo.observable({
 
                 if (searchVal) {
                     searchFilter = {
-                        field: 'ResponsiblePerson',
+                        field: 'Address',
                         operator: 'contains',
                         value: searchVal
                     };
@@ -256,12 +239,12 @@ app.farms = kendo.observable({
                     itemModel.Name = String.fromCharCode(160);
                 }
 
+                /// start detail form initialization
+                /// end detail form initialization
+
                 farmsModel.set('originalItem', itemModel);
                 farmsModel.set('currentItem',
                     farmsModel.fixHierarchicalData(itemModel));
-
-                /// start detail form initialization
-                /// end detail form initialization
 
                 return itemModel;
             },
@@ -272,15 +255,8 @@ app.farms = kendo.observable({
                 }
                 return linkChunks[0] + this.get('currentItem.' + linkChunks[1]);
             },
-            imageBind: function(imageField) {
-                if (!imageField) {
-                    return;
-                }
-                if (imageField.indexOf('|') > -1) {
-                    return processImage(this.get('currentItem.' + imageField.split('|')[0]));
-                }
-                return processImage(imageField);
-            },
+            /// start masterDetails view model functions
+            /// end masterDetails view model functions
             currentItem: {}
         });
 
@@ -351,6 +327,9 @@ app.farms = kendo.observable({
                 itemData = dataSource.getByUid(itemUid),
                 fixedData = farmsModel.fixHierarchicalData(itemData);
 
+            /// start edit form before itemData
+            /// end edit form before itemData
+
             this.set('itemData', itemData);
             this.set('editFormData', {
                 outcome: itemData.Outcome,
@@ -361,6 +340,7 @@ app.farms = kendo.observable({
                 /// start edit form data init
                 /// end edit form data init
             });
+
             /// start edit form show
             /// end edit form show
         },

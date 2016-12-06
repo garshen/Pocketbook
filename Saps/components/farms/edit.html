@@ -14,8 +14,8 @@
                 <li class="form-content-item">
 
 
-                    <label id="dateField" class="field field--date">
-                        <span class="field__label">Date</span>
+                    <label id="dateField" class="field km-listview-label field--date">
+                        <span class="field__label" data-bind="text: strings.complaints.complaintsModel.editableListForm10.date.title"></span>
 
 
                         <input id="date" data-bind="value: editFormData.date" type="date">
@@ -25,44 +25,44 @@
                 <li class="form-content-item">
 
 
-                    <label id="nameField" class="field field--text">
-                        <span class="field__label">Name:</span>
+                    <label id="nameField" class="field km-listview-label field--text">
+                        <span class="field__label" data-bind="text: strings.farms.farmsModel.editableListForm59.name.title"></span>
 
 
-                        <input id="name" data-bind="value: editFormData.name" placeholder="Name of farm" type="text">
-
-                    </label>
-                </li>
-                <li class="form-content-item">
-
-
-                    <label id="responsiblePersonField" class="field field--text">
-                        <span class="field__label">Responsible Person:</span>
-
-
-                        <input id="responsiblePerson" data-bind="value: editFormData.responsiblePerson" placeholder="Person in control" type="text">
+                        <input id="name" data-bind="value: editFormData.name" type="text">
 
                     </label>
                 </li>
                 <li class="form-content-item">
 
 
-                    <label id="addressField" class="field field--text">
-                        <span class="field__label">Address:</span>
+                    <label id="responsiblePersonField" class="field km-listview-label field--text">
+                        <span class="field__label" data-bind="text: strings.farms.farmsModel.editableListForm55.responsiblePerson.title"></span>
 
 
-                        <input id="address" data-bind="value: editFormData.address" placeholder="Address of farm" type="text">
+                        <input id="responsiblePerson" data-bind="value: editFormData.responsiblePerson" type="text">
 
                     </label>
                 </li>
                 <li class="form-content-item">
 
 
-                    <label id="outcomeField" class="field field--text">
-                        <span class="field__label">Outcome</span>
+                    <label id="addressField" class="field km-listview-label field--text">
+                        <span class="field__label" data-bind="text: strings.complaints.complaintsModel.editableListForm10.address.title"></span>
 
 
-                        <input id="outcome" data-bind="value: editFormData.outcome" placeholder="Outcome of visit" type="text">
+                        <input id="address" data-bind="value: editFormData.address" type="text">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="outcomeField" class="field km-listview-label field--text">
+                        <span class="field__label" data-bind="text: strings.complaints.complaintsModel.editableListForm10.outcome.title"></span>
+
+
+                        <input id="outcome" data-bind="value: editFormData.outcome" type="text">
 
                     </label>
                 </li>

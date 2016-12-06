@@ -1,64 +1,64 @@
 <div data-role="view" data-title="Add" data-model="app.atm.addItemViewModel" data-bind="events: { show: onShow }" id="atmModelAddScreen" class="screen screen--add add-item-view">
     <header data-role="header">
         <div data-role="navbar" class="header-text">
-            <span>Create</span>
+            <span data-bind="text: strings.atm.atmModel.addScreenHeaderValue"></span>
             <a data-role="backbutton" data-align="left" data-bind="events: { click: onCancel }">Cancel</a>
             <a data-role="button" data-align="right" data-bind="events: { click: onSaveClick }">Save</a>
         </div>
     </header>
     <!-- START_CUSTOM_CODE_atmModel -->
     <!-- END_CUSTOM_CODE_atmModel -->
-    <div id="editableListForm27" class="form-view screen__content screen__content--form">
+    <div id="editableListForm85" class="form-view screen__content screen__content--form">
         <form>
             <ul class="form-content" data-role="listview" data-style="inset">
                 <li class="form-content-item">
 
 
-                    <label id="atmField" class="field field--text">
-                        <span class="field__label">Name:</span>
+                    <label id="dateField" class="field km-listview-label field--datetime-local">
+                        <span class="field__label" data-bind="text: strings.complaints.complaintsModel.editableListForm10.date.title"></span>
 
 
-                        <input id="atm" data-bind="value: addFormData.atm" placeholder="Name of Atm" type="text">
-
-                    </label>
-                </li>
-                <li class="form-content-item">
-
-
-                    <label id="dateField" class="field field--date">
-                        <span class="field__label">Date</span>
-
-
-                        <input id="date" data-bind="value: addFormData.date" type="date">
+                        <input id="date" data-bind="value: addFormData.date" type="datetime-local">
 
                     </label>
                 </li>
                 <li class="form-content-item">
 
 
-                    <label id="addressField" class="field field--text">
-                        <span class="field__label">Address</span>
+                    <label id="atmField" class="field km-listview-label field--text">
+                        <span class="field__label" data-bind="text: strings.atm.title"></span>
 
 
-                        <input id="address" data-bind="value: addFormData.address" placeholder="Address of Atm" type="text">
+                        <input id="atm" data-bind="value: addFormData.atm" type="text">
 
                     </label>
                 </li>
                 <li class="form-content-item">
 
 
-                    <label id="outcomeField" class="field field--text">
-                        <span class="field__label">Outcome:</span>
+                    <label id="addressField" class="field km-listview-label field--text">
+                        <span class="field__label" data-bind="text: strings.complaints.complaintsModel.editableListForm10.address.title"></span>
 
 
-                        <input id="outcome" data-bind="value: addFormData.outcome" placeholder="Outcome" type="text">
+                        <input id="address" data-bind="value: addFormData.address" type="text">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="outcomeField" class="field km-listview-label field--text">
+                        <span class="field__label" data-bind="text: strings.complaints.complaintsModel.editableListForm10.outcome.title"></span>
+
+
+                        <input id="outcome" data-bind="value: addFormData.outcome" type="text">
 
                     </label>
                 </li>
             </ul>
         </form>
-        <!-- START_CUSTOM_CODE_editableListForm27 -->
+        <!-- START_CUSTOM_CODE_editableListForm85 -->
         <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-        <!-- END_CUSTOM_CODE_editableListForm27 -->
+        <!-- END_CUSTOM_CODE_editableListForm85 -->
     </div>
 </div>
